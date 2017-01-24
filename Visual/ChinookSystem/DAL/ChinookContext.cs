@@ -15,14 +15,17 @@ using Chinook.Data.Entities;
 #endregion
 namespace ChinookSystem.DAL
 {
-   internal class ChinookContext:DbContext
+    internal class ChinookContext : DbContext
     {
-        public ChinookContext():base("ChinookDB")
+        public ChinookContext() : base("ChinookDB")
         {
 
         }
 
-        public DbSet<Artist>Artists { get; set; }
-        public DbSet<Album>Albums { get; set; }
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<MediaType> MediaType { get; set; }
+        public DbSet<Track> Tracks { get; set; }
+
     }
 }

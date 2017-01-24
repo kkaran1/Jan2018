@@ -12,17 +12,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Chinook.Data.Entities
 {
-    [Table("Artists")]
-   public class Artist
+    [Table("MediaTypes")]
+    public class MediaType
     {
-        [Key]
-        public int ArtistId { get; set; }
+       [Key]
+       public int MediaTypeId { get; set; }
         public string Name { get; set; }
 
-        //navigational properties
-        //The virtual property Albums point to all children of the 
-        //Parent instant
-        public virtual ICollection<Album>Albums { get; set; }
-
+        //navigation Properties
+        public virtual ICollection<Track> Tracks { get; set; }
     }
 }
