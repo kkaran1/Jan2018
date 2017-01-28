@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 #region Additional Namespace
 using Chinook.Data.Entities;
+using Chinook.Data.DTOs;
 using ChinookSystem.DAL;
 using System.ComponentModel;
 using Chinook.Data.POCOs;
@@ -14,9 +15,9 @@ using Chinook.Data.POCOs;
 namespace ChinookSystem.BLL
 {
     [DataObject]
-  public class AlbumController
+    public class AlbumController
     {
-        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<AlbumArtist> ListAlbumsbyArtist()
         {
             using (var context = new ChinookContext())
@@ -32,8 +33,8 @@ namespace ChinookSystem.BLL
                               };
                 return results.ToList();
             }
-        }
-        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        }//eom
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Album> Albums_GetForArtistbyName(string name)
         {
             using (var context = new ChinookContext())
@@ -48,6 +49,29 @@ namespace ChinookSystem.BLL
                 //it is NOT C#
                 return results.ToList();
             }
+        }//eom
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<ArtistAlbumReleases> ArtistAlbumReleases_List()
+        {
+            using (var context = new ChinookContext())
+            {
+                var results = from x in context.Albums
+                              group x by x.Artist.Name into result
+                              select new ArtistAlbumReleases
+                              {
+                                  Artist = result.Key,
+                                  Albums = (from y in result
+                                            select new AlbumRelease
+                                            {
+                                                Title = y.Title,
+                                                RYear = y.ReleaseYear,
+                                                Label = y.ReleaseLabel
+                                            }).ToList()
+                              };
+                return results.ToList();
+                 
+            }
         }
-    }
-}
+
+    }//eoc
+}//eon

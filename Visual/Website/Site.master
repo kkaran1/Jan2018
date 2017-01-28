@@ -84,11 +84,13 @@
                         >
                         <Items>
                             <asp:MenuItem Text="Home" NavigateUrl="~/"></asp:MenuItem>
-
+                           
                             <asp:MenuItem Text="Queries" Value="Queries">
                                 <asp:MenuItem Text="Nav Query" NavigateUrl="~/Sample Pages/NavigationPropertySample.aspx"></asp:MenuItem>
                                  <asp:MenuItem Text="Parameter Query" NavigateUrl="~/Sample Pages/SimpleParameterQuery.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Nested Repeaters" NavigateUrl="~/Sample Pages/RepeaterNestedRepeater.aspx"></asp:MenuItem>
                             </asp:MenuItem>
+                          
 
                             <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
                              <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>

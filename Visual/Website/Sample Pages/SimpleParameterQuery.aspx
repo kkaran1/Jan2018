@@ -73,7 +73,7 @@
                 <td>
                     <asp:Label Text='<%# Eval("ReleaseLabel") %>' runat="server" ID="ReleaseLabelLabel" /></td>
                <%-- <td>
-                   <%-- <asp:Label Text='<%# Eval("Artist") %>' runat="server" ID="ArtistLabel" /></td>--%>--%>
+                   <%-- <asp:Label Text='<%# Eval("Artist") %>' runat="server" ID="ArtistLabel" /></td>--%>
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
