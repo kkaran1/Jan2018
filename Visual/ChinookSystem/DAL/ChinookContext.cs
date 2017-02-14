@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 #region additional namespaces
 using System.Data.Entity;
 using Chinook.Data.Entities;
+using Chinook.Data.Enitities;
 
 
 
@@ -26,6 +27,7 @@ namespace ChinookSystem.DAL
         public DbSet<Album> Albums { get; set; }
         public DbSet<MediaType> MediaType { get; set; }
         public DbSet<Track> Tracks { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
     }
 }

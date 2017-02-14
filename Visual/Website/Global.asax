@@ -2,6 +2,7 @@
 <%@ Import Namespace="Website" %>
 <%@ Import Namespace="System.Web.Optimization" %>
 <%@ Import Namespace="System.Web.Routing" %>
+<%@ Import Namespace="ChinookSystem.BLL.Security" %>
 
 <script runat="server">
 
@@ -9,6 +10,13 @@
     {
         RouteConfig.RegisterRoutes(RouteTable.Routes);
         BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+        var rolemgr = new RoleManager();
+        rolemgr.AddDefaultRoles();
+
+        var usermgr = new UserManager();
+        usermgr.AddWebMaster();
+            
     }
 
 </script>
